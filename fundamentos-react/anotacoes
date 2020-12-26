@@ -1,0 +1,138 @@
+ -- Fundamentos React
+
+    1. Criando o Projeto
+
+        npx create-react-app
+
+    2. Exibindo String na Tela
+    
+    * ReactDOM *
+        DOM -> Document Object Model (Estrutura da página)
+        
+        ReactDOM.render(elParaRenderizar, local)
+    
+    3. Sobre o JSX
+    
+        JSX -> JavaScript XML
+        Precisa ter a extensão .JSX para funcionar
+        Permite escrever HTML dentro do JavaScript
+    
+    4. Carregando CSS
+    
+        import './caminho/aquivo.css'
+    
+    5. Primeiro Componente
+    
+        export default
+        
+        <Componente /> 
+        <Componente></Componente>
+        
+        Visam o reuso
+        
+    6. Componente com Propriedade (props)
+    
+        Props -> espécie de parâmetro
+        JSX -> ajuda na IDE
+        
+        { variavel }
+        
+        As propriedades são read only, criar nova variável caso queira
+        fazer algum tipo de processamento
+        
+    7. React Fragment
+    
+        Os componentes JSX adjacentes precisam estar dentro de uma enclosing tag
+    
+        <> </>
+    
+        <React.Fragment>...</React.Fragment> -> Permite o uso de atributos
+        
+    8. Componente App
+    
+        Componente com Arrow Function
+        
+    9. Componente Card
+    
+        Criando card para abrigar conteúdos.                
+        
+        Utilização do Flexbox para criar layout
+        
+        Aplicando cores dinamicamente
+        
+        Style in line = recebe um objeto -> style = {{estilos}}
+    
+    10. Componente com Filho
+    
+        - Passar props para os filhos com spread (...props)
+        
+        Parâmetros tem que ser passados de forma explícita
+        
+        React.cloneElement(props.children, {...props})
+
+        { props.children }
+        
+        React.Children.map(props.children, (child) => {
+            return cloneElement(child, props)
+        })
+        
+        props.children.map
+        
+    11. Repetição 
+    
+        Map é um método útil para isso
+        Para cada item é necessária uma key
+        
+        * Desafio de Repetição -> Produto (ID, Nome, Preço)
+        
+    12. Renderização Condicional
+    
+        Permite decidir se um elemento vai ser renderizado ou não na tela
+        * Operação Ternária é muito utilizada
+        * Criando componente condicional (<If>)
+        
+        child.type | child.name
+        
+    13. Comunicação Direta
+    
+        * Se dá através das props
+        * Dentro do Pai há uma referência ao filho
+
+    14. Comunicação Indireta
+    
+        * Informações passadas do filho para o pai sem a necessidade
+        de referenciar o pai no filho (o que não seria certo)
+        
+        * Se dá por meio de funções passadas via Props (pai -> filho)
+        
+    15. Componente com Estado
+    
+        useState [Hook] -> permite criar estados dentro de um componente
+        const [nome, setNome] = useState('?')
+    
+    16. Componente Controlado (Controlled Components)
+    
+        Estado muda -> altera a interface gráfica
+        O componente só reflete a mudança na interace se o estado mudar
+        
+        * onChange
+        * readOnly
+        * value={undefined} -> Uncontrolled Component
+        
+    17. Desafio Contador
+    
+        * Componente com classes
+            
+            state = {}
+            render()
+            this.props.
+            constructor()
+            super(props)
+        
+        * Cuidado com o this (optar pela função Arrow)
+        
+        - Quebrando o contador em componentes
+        
+    18. Desafio da Megasena
+    
+        *Gerar Array com Números (param = qtd)
